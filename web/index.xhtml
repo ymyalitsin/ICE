@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core"
+      xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+<h:outputStylesheet library="css" name="Main.css"/>
+</h:head>
+
+<h:body>
+
+        <h:form>
+        <p:commandButton value="Click" onclick="PF('wdialog').show()"/>
+
+        <p:dialog widgetVar="wdialog" modal="true" closable="false" showHeader="false">
+
+            <p:fieldset legend="Расчет">
+                <table>
+                    <tr>
+                        <td align="right">
+                            <p:outputLabel value="Страховая сумма"/>
+                        </td>
+                        <td align="left">
+                            <p:inputText/>
+                        </td>
+                        <td>
+                            <p:outputLabel value="Срок действия с"/>
+                        </td>
+                        <td>
+                            <p:calendar pattern="dd/MM/YYYY" showOn="button" mask="true"/>
+                        </td>
+                        <td>
+                            <p:outputLabel value="по"/>
+                        </td>
+                        <td>
+                            <p:calendar pattern="dd/MM/YYYY" showOn="button" mask="true"/>
+                        </td>
+
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <p:outputLabel value="Тип недвижимости"/>
+                        </td>
+                        <td align="left">
+                            <p:selectOneMenu style="width: 25px">
+                                <f:selectItem itemLabel="Выберите тип" itemValue=""/>
+                                <f:selectItem itemLabel="Квартира" itemValue="Apartment"/>
+                                <f:selectItem itemLabel="Дом" itemValue="House"/>
+                                <f:selectItem itemLabel="Комната" itemValue="Room"/>
+                            </p:selectOneMenu>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <p:outputLabel value="Год постройки"/>
+                        </td>
+                        <td align="left">
+                            <p:inputMask mask="9999"/>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td align="right">
+                            <p:outputLabel value="Площадь, кв.м."/>
+                        </td>
+                        <td align="left">
+                            <p:inputText/>
+                        </td>
+                    </tr>
+                </table>
+                <table align="center">
+                    <tr>
+                        <td>
+                            <p:commandButton value="Расчитать"/>
+                        </td>
+                    </tr>
+                </table>
+                <table>
+                    <tr>
+                        <td>
+                            <p:outputLabel value="Дата расчета"/>
+                        </td>
+                        <td>
+                            <p:inputText readonly="true"/>
+                        </td>
+                        <td/>
+                        <td>
+                            <p:outputLabel value="Премия"/>
+                        </td>
+                        <td>
+                            <p:inputText readonly="true"/>
+                        </td>
+                    </tr>
+                </table>
+            </p:fieldset>
+            <table>
+                <tr>
+                    <td>
+                        <p:outputLabel value="№ договора"/>
+                    </td>
+                    <td>
+                        <p:inputText readonly="true"/>
+                    </td>
+                    <td>
+                        <p:outputLabel id="date" value="Дата заключения"/>
+                    </td>
+                    <td>
+                        <p:calendar pattern="dd/MM/YYYY" showOn="button" mask="true"/>
+                    </td>
+                </tr>
+            </table>
+            <p:outputLabel value="Страхователь"/>
+            <table>
+                <tr>
+                    <td>
+                        <p:commandButton value="Выбрать"/>
+                    </td>
+                    <td>
+                        <p:inputText readonly="true"/>
+                    </td>
+                    <td>
+                        <p:commandButton value="Изменить"/>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>
+                        <p:outputLabel value="Дата рождения"/>
+                    </td>
+                    <td>
+                        <p:inputText readonly="true"/>
+                    </td>
+                    <td>
+                        <p:outputLabel value="Паспорт"/>
+                    </td>
+                    <td>
+                        <p:outputLabel value="Серия"/>
+                    </td>
+                    <td>
+                        <p:inputMask mask="9999" readonly="true"/>
+                    </td>
+                    <td>
+                        <p:outputLabel value="Номер"/>
+                    </td>
+                    <td>
+                        <p:inputMask mask="999999" readonly="true"/>
+                    </td>
+                </tr>
+            </table>
+            <p:outputLabel value="Адрес недвижимости"/>
+            <table>
+                <tr>
+                    <td>
+                        <p:inputText/>
+                    </td>
+                    <td>
+                        <p:inputMask mask="999999"/>
+                    </td>
+                    <td>
+                        <p:inputText/>
+                    </td>
+                    <td>
+                        <p:inputText/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p:outputLabel value="Государство" styleClass="custom"/>
+                    </td>
+                    <td>
+                        <p:outputLabel value="Индекс" styleClass="custom"/>
+                    </td>
+                    <td>
+                        <p:outputLabel value="Республика, край, область" styleClass="custom"/>
+                    </td>
+                    <td>
+                        <p:outputLabel value="Район" styleClass="custom"/>
+                    </td>
+                </tr>
+            </table>
+            <table>
+                <tr>
+                    <td>
+                        <p:inputText/>
+                    </td>
+                    <td>
+                        <p:inputText/>
+                    </td>
+                    <td>
+                        <p:inputMask mask="999999"/>
+                    </td>
+                    <td>
+                        <p:inputText/>
+                    </td>
+                    <td>
+                        <p:inputText/>
+                    </td>
+                    <td>
+                        <p:inputMask mask="999999"/>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <p:outputLabel value="Населенный пункт"/>
+                    </td>
+                    <td>
+                        <p:outputLabel value="Улица"/>
+                    </td>
+                    <td>
+                        <p:outputLabel value="Дом"/>
+                    </td>
+                    <td>
+                        <p:outputLabel value="Корпус"/>
+                    </td>
+                    <td>
+                        <p:outputLabel value="Строение"/>
+                    </td>
+                    <td>
+                        <p:outputLabel value="Квартира"/>
+                    </td>
+                </tr>
+            </table>
+            <p:outputLabel value="Комментарий"/>
+            <table>
+                <tr>
+                    <td>
+                        <p:outputLabel value="Комментарий к договору, не печатается на странице"/>
+                    </td>
+                    <td>
+                        <p:inputTextarea/>
+                    </td>
+                </tr>
+            </table>
+
+        </p:dialog>
+    </h:form>
+
+</h:body>
+
+
+</html>
